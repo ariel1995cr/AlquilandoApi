@@ -16,6 +16,7 @@ Install all the dependencies using composer
     composer install
 
 Install npm and compile js and css
+
     npm install
     npm run dev
 
