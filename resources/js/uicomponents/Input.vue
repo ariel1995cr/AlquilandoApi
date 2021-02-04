@@ -1,0 +1,35 @@
+<template>
+    <div class="relative">
+        <label v-bind="$attrs" for="name-with-label">
+            {{title}}
+        </label>
+        <input
+            v-bind="$attrs"
+            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-black-600 focus:border-transparent"
+            name="email"
+            :placeholder="placeholder"
+            v-bind:value="value"
+            v-on:input="$emit('input', $event.target.value)"
+        />
+    </div>
+</template>
+
+<script>
+export default {
+    name: "Input",
+    props: {
+        title: String,
+        value: String,
+        placeholder: {
+            type: String,
+            default: ""
+        },
+    },
+    model: {
+        prop: "value",
+        event: "input"
+    }
+};
+</script>
+
+<style></style>
